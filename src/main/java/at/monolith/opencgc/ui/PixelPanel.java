@@ -17,7 +17,7 @@ public class PixelPanel extends JPanel
     public BufferedImage image;
     public int[] imagePixelData;
 
-    public PixelPanel(int nx, int ny)
+    public PixelPanel(int nx, int ny, String labelName)
     {
         this.nx = nx;
         this.ny = ny;
@@ -31,6 +31,8 @@ public class PixelPanel extends JPanel
                 for (int k = 0; k < 3; k++)
                     field[i][j][k] = 0.0;
 
+        if(labelName != null)
+            add(new Label(labelName));
     }
 
     public void setField(double[][][] field)

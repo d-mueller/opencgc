@@ -40,18 +40,12 @@ public class Main extends JFrame
 
         simulation = new Simulation();
 
-        ETFrame = new PixelPanel(simulation.nx, simulation.ny);
-        ELFrame = new PixelPanel(simulation.nx, simulation.ny);
-        BTFrame = new PixelPanel(simulation.nx, simulation.ny);
-        BLFrame = new PixelPanel(simulation.nx, simulation.ny);
-        energyDensityFrame = new PixelPanel(simulation.nx, simulation.ny);
+        ETFrame = new PixelPanel(simulation.nx, simulation.ny, "ET");
+        ELFrame = new PixelPanel(simulation.nx, simulation.ny, "EL");
+        BTFrame = new PixelPanel(simulation.nx, simulation.ny, "BT");
+        BLFrame = new PixelPanel(simulation.nx, simulation.ny, "BL");
+        energyDensityFrame = new PixelPanel(simulation.nx, simulation.ny, "E");
         energyChartPanel = new EnergyChartPanel(simulation.grid);
-
-        ETFrame.add(new Label("E transversal"));
-        ELFrame.add(new Label("E longitudinal"));
-        BTFrame.add(new Label("B transversal"));
-        BLFrame.add(new Label("B longitudinal"));
-        energyDensityFrame.add(new Label("Energy density"));
 
         container = new JPanel();
         container.setLayout(new GridLayout(2, 3));
@@ -63,7 +57,6 @@ public class Main extends JFrame
         container.add(BTFrame);
         container.add(ELFrame);
         container.add(energyChartPanel);
-        energyChartPanel.setSize(320, 320);
 
         this.add(container);
 
