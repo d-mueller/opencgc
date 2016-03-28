@@ -23,6 +23,7 @@ public class Main extends JFrame
     PixelPanel BLFrame;
     PixelPanel energyDensityFrame;
     EnergyChartPanel energyChartPanel;
+    PressureRatioPanel pressureRatioPanel;
     Simulation simulation;
     /**
      * Timer for animation
@@ -46,6 +47,7 @@ public class Main extends JFrame
         BLFrame = new PixelPanel(simulation.nx, simulation.ny, "BL");
         energyDensityFrame = new PixelPanel(simulation.nx, simulation.ny, "E");
         energyChartPanel = new EnergyChartPanel(simulation.grid);
+        pressureRatioPanel = new PressureRatioPanel(simulation.grid);
 
         container = new JPanel();
         container.setLayout(new GridLayout(2, 3));
@@ -56,7 +58,7 @@ public class Main extends JFrame
 
         container.add(BTFrame);
         container.add(ELFrame);
-        container.add(energyChartPanel);
+        container.add(pressureRatioPanel);
 
         this.add(container);
 
